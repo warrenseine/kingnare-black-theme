@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        xmlns:d="http://ns.adobe.com/fxg/2008/dt"
+        width="123" height="15" fc:manageBounds="false">
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.RadioButton")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over"  />
+        <s:State name="down"  />
+        <s:State name="disabled"  />
+        <s:State name="upAndSelected" />
+        <s:State name="overAndSelected"  />
+        <s:State name="downAndSelected"  />
+        <s:State name="disabledAndSelected" />
+    </s:states>
+    
+    <s:Group x="0" bottom="0">
+        <s:Ellipse x="2" y="2" width="11" height="11" alpha="1">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry alpha="0.2" color="#000000" ratio="0"
+                                     color.disabledAndSelected="#FFFFFF"
+                                     color.downAndSelected="#FFFFFF"
+                                     color.overAndSelected="#FFFFFF"
+                                     color.upAndSelected="#FFFFFF"/>
+                    <s:GradientEntry alpha="0.03" color="#000000" ratio="1"
+                                     color.disabledAndSelected="#FFFFFF"
+                                     color.downAndSelected="#FFFFFF"
+                                     color.overAndSelected="#FFFFFF"
+                                     color.upAndSelected="#FFFFFF"/>
+                </s:LinearGradient>
+            </s:fill>
+        </s:Ellipse>
+        <s:Ellipse x="2.5" y="2.5" width="10" height="10" alpha="1">
+            <s:stroke>
+                <s:LinearGradientStroke caps="none" joints="miter" miterLimit="4" rotation="90"
+                                        weight="1">
+                    <s:GradientEntry alpha="0.25" color="#000000" ratio="0"
+                                     alpha.disabledAndSelected="0.08"
+                                     color.disabledAndSelected="#FFFFFF"
+                                     alpha.downAndSelected="0.08" color.downAndSelected="#FFFFFF"
+                                     alpha.overAndSelected="0.08" color.overAndSelected="#FFFFFF"
+                                     alpha.upAndSelected="0.08" color.upAndSelected="#FFFFFF"/>
+                    <s:GradientEntry alpha="0.1" color="#000000" ratio="1"
+                                     alpha.disabledAndSelected="0.0"
+                                     color.disabledAndSelected="#FFFFFF"
+                                     alpha.downAndSelected="0.0" color.downAndSelected="#FFFFFF"
+                                     alpha.overAndSelected="0.0" color.overAndSelected="#FFFFFF"
+                                     alpha.upAndSelected="0.0" color.upAndSelected="#FFFFFF"/>
+                </s:LinearGradientStroke>
+            </s:stroke>
+        </s:Ellipse>
+        <!-- background -->
+        <s:Ellipse x="1.5" y="1.5" width="12" height="12">
+            <s:stroke>            
+                <s:SolidColorStroke alpha="0.8" color="#000000"
+                                    color.disabled="#333333"
+                                    alpha.disabledAndSelected="0.7000000000000001"
+                                    color.disabledAndSelected="#333333"
+                                    alpha.downAndSelected="0.7000000000000001"
+                                    alpha.overAndSelected="0.7000000000000001"
+                                    alpha.upAndSelected="0.7000000000000001"/>
+            </s:stroke>
+        </s:Ellipse>
+        <s:Ellipse x="0.5" y="0.5" width="14" height="14">
+            <s:stroke>            
+                <s:SolidColorStroke alpha="0.05" color="#FFFFFF"
+                                    alpha.disabledAndSelected="0.1"
+                                    alpha.downAndSelected="0.1"
+                                    alpha.over="0.05"
+                                    alpha.overAndSelected="0.1"
+                                    alpha.upAndSelected="0.1"/>
+            </s:stroke>
+        </s:Ellipse>
+        <s:Group includeIn="disabledAndSelected,downAndSelected,overAndSelected,upAndSelected" x="6" y="6">
+            <s:Group x="0" y="0" alpha="0.9">
+                <s:Rect x="0" y="1" width="3" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="1" color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="0" y="1" width="3" height="1" rotation="90" transformX="1.5" transformY="0.5">
+                    <s:fill>
+                        <s:SolidColor alpha="1" color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+            </s:Group>
+            <s:Group x="0" y="0" alpha="0.35000000000000003">
+                <s:Rect x="0" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="2" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="2" y="2" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="0" y="2" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+            </s:Group>
+            <s:Group x="0" y="3">
+                <s:Rect x="0" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="0.15" color="#000000"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="2" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="0.15" color="#000000"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="1" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="0.3" color="#000000"/>
+                    </s:fill>
+                </s:Rect>
+            </s:Group>
+        </s:Group>
+        
+        <!-- shadow (down states only) -->
+        
+        <!-- center -->
+    </s:Group>
+    
+    <!-- Label -->
+    <s:RichText id="labelDisplay" x="18" textAlign="start" verticalAlign="middle" verticalCenter="0"
+                alpha.disabled="0.5"
+                alpha.disabledAndSelected="0.5"/>
+    
+</s:Skin>

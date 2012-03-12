@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        width="13" height="200" fc:manageBounds="false">
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.VScrollBar")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="normal" />
+        <s:State name="disabled" />
+        <s:State name="inactive" />
+    </s:states>
+    
+    <s:Rect width="100%" height="100%">
+        <s:fill>
+            <s:SolidColor color="#333333"/>
+        </s:fill>
+    </s:Rect>
+    
+    <s:Button id="track" x="0" top="17" bottom="17" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.VScrollbar.VScrollbarTrack"
+              alpha.disabled="0.5"
+              alpha.inactive="0.5"/>
+    
+    <s:Button id="thumb" x="0" y="17" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.VScrollbar.VScrollbarThumb"
+              alpha.disabled="0.5"
+              visible.inactive="false" alpha.inactive="0.5"/>
+    
+    <s:Button id="decrementButton" x="0" top="0" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.VScrollbar.VScrollbarUpButton"
+              alpha.disabled="0.5"
+              alpha.inactive="0.5" enabled.inactive="false"
+              top.normal="0" height.normal="18"/>
+    
+    <s:Button id="incrementButton" x="0" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.VScrollbar.VScrollbarDownButton"
+              bottom.disabled="0" alpha.disabled="0.5"
+              bottom.inactive="0" alpha.inactive="0.5" enabled.inactive="false"
+              x.normal="0" bottom.normal="0"/>
+    
+</s:Skin>

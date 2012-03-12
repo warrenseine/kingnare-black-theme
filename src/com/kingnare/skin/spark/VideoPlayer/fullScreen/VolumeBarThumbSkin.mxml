@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for the volume bar thumb part of a Spark VideoPlayer component
+      in the normal skin state. The normal skin state means the component is not in 
+      one of the <code>fullScreen</code> skin states.  
+
+      @see spark.components.VideoPlayer
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009">
+
+    <fx:Metadata>
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata> 
+    
+    <fx:Script fb:purpose="styling">
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+    </fx:Script>
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over" />
+        <s:State name="down" />
+        <s:State name="disabled" />
+    </s:states>
+
+    <!-- layer 2: fill -->
+    <!--- @private -->
+    <s:Rect id="fillbase" left="0" right="0" top="0" bottom="0" radiusX="8" radiusY="8">
+        <s:fill>
+            <s:SolidColor color="#333333"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect left="1" right="1" top="1" bottom="1" radiusX="8" radiusY="8">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0xFFFFFF"
+                                 alpha.down="0.01"
+                                 alpha.over="0.5"
+                                 alpha="0.35" />
+                <s:GradientEntry color="0xFFFFFF" 
+                                 alpha.down="0.01"
+                                 alpha.over="0.3" 
+                                 alpha="0.15"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    
+    <!-- layer 5: highlight stroke (all states except down) -->
+    <s:Rect left="1" right="1" top="1" bottom="1" excludeFrom="down" radiusX="8" radiusY="8">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90" weight="1">
+                <s:GradientEntry color="0xFFFFFF" 
+                                 alpha="0.1" 
+                                 alpha.down="0.2"
+                                 color.down="0x000000"/>
+                <s:GradientEntry color="0xFFFFFF" 
+                                 alpha="0.03"
+                                 alpha.down="0.15"
+                                 color.down="0x000000"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    
+    <!-- layer 7: border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
+    <s:Rect left="0" right="0" top="0" bottom="0" radiusX="8" radiusY="8">
+        <s:stroke>
+            <s:SolidColorStroke color="#000000"/>
+        </s:stroke>
+    </s:Rect>
+</s:SparkSkin>

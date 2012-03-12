@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        xmlns:d="http://ns.adobe.com/fxg/2008/dt"
+        width="13">
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over"/>
+        <s:State name="down" />
+        <s:State name="disabled" />
+    </s:states>
+    
+    
+    <!-- background -->
+    <!-- Gripper -->
+    <s:Rect x="0.5" width="12" top="0" bottom="0">
+        <s:stroke>
+            <s:SolidColorStroke alpha="0.6" caps="square" color="#000000" joints="miter"
+                                color.disabled="#333333"/>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect x="1.5" width="10" height="27" top="1" bottom="1">
+        <s:stroke>
+            <s:SolidColorStroke alpha="0.15" alpha.over="0.23" caps="square" color="#FFFFFF" joints="miter"/>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect x="2" width="9" height="26" top="2" bottom="2">
+        <s:fill>
+            <s:SolidColor alpha="0.05" alpha.over="0.10" color="#FFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <s:Group horizontalCenter="0" verticalCenter="0"
+             transformY.disabled="-1"
+             transformY.down="-1"
+             transformY.over="-1"
+             transformY.up="-1">
+        <s:Line x="0.5" y="2.5" xFrom="0" xTo="2" yFrom="1" yTo="1">
+            <s:stroke>
+                <s:SolidColorStroke alpha="0.4" caps="square" color="#000000" joints="miter"
+                                    pixelHinting="true"/>
+            </s:stroke>
+        </s:Line>
+        <s:Line x="0.5" y="1.5" xFrom="0" xTo="2" yFrom="1" yTo="1">
+            <s:stroke>
+                <s:SolidColorStroke caps="square" color="#FFFFFF" joints="miter" pixelHinting="true"
+                                    alpha.disabled="0.5"
+                                    alpha.down="0.5"
+                                    alpha.up="0.5"/>
+            </s:stroke>
+        </s:Line>
+        <s:Line x="0.5" y="4.5" xFrom="0" xTo="2" yFrom="1" yTo="1">
+            <s:stroke>
+                <s:SolidColorStroke alpha="0.4" caps="square" color="#000000" joints="miter"
+                                    pixelHinting="true"/>
+            </s:stroke>
+        </s:Line>
+        <s:Line x="0.5" y="3.5" xFrom="0" xTo="2" yFrom="1" yTo="1">
+            <s:stroke>
+                <s:SolidColorStroke caps="square" color="#FFFFFF" joints="miter" pixelHinting="true"
+                                    alpha.disabled="0.5"
+                                    alpha.down="0.5"
+                                    alpha.up="0.5"/>
+            </s:stroke>
+        </s:Line>
+        <s:Line x="0.5" y="0.5" xFrom="0" xTo="2" yFrom="1" yTo="1">
+            <s:stroke>
+                <s:SolidColorStroke alpha="0.4" caps="square" color="#000000" joints="miter"
+                                    pixelHinting="true"/>
+            </s:stroke>
+        </s:Line>
+        <s:Line x="0.5" y="-0.5" xFrom="0" xTo="2" yFrom="1" yTo="1">
+            <s:stroke>
+                <s:SolidColorStroke caps="square" color="#FFFFFF" joints="miter" pixelHinting="true"
+                                    alpha.disabled="0.5"
+                                    alpha.down="0.5"
+                                    alpha.up="0.5"/>
+            </s:stroke>
+        </s:Line>
+    </s:Group>
+    
+    <!-- shadow line -->
+    
+</s:Skin>

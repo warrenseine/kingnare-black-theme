@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        width="15" height="15" >
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over"  />
+        <s:State name="down"  />
+        <s:State name="disabled" />
+    </s:states>
+    
+    <s:Group x="0" y="0" transformX="1" transformY="1">
+        <s:Ellipse x="0" y="0" width="15" height="15" alpha="1">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry alpha="1.0" color="#666666" ratio="0"
+                                     color.disabled="#555555"
+                                     color.over="#999999"/>
+                    <s:GradientEntry alpha="1.0" color="#3F3F3F" ratio="1"
+                                     color.disabled="#555555"/>
+                </s:LinearGradient>
+            </s:fill>
+        </s:Ellipse>
+        <s:Ellipse x="1.5" y="1.5" width="12" height="12" alpha="1">
+            <s:stroke>
+                <s:LinearGradientStroke caps="none" joints="miter" miterLimit="4" rotation="90"
+                                        weight="1">
+                    <s:GradientEntry alpha="0.2" color="#FFFFFF" ratio="0"/>
+                    <s:GradientEntry alpha="0.0" color="#FFFFFF" ratio="1"/>
+                </s:LinearGradientStroke>
+            </s:stroke>
+        </s:Ellipse>
+        <!-- background -->
+        <s:Ellipse x="0.5" y="0.5" width="14" height="14">
+            <s:stroke>            
+                <s:SolidColorStroke alpha="1" color="#000000"/>
+            </s:stroke>
+        </s:Ellipse>
+        <!--<s:Ellipse x="0.5" y="0.5" width="16" height="16">
+            <s:stroke>            
+                <s:SolidColorStroke alpha="0.1" color="#FFFFFF"/>
+            </s:stroke>
+        </s:Ellipse>-->
+        <!--<s:Group x="7" y="7" transformX="-1" transformY="-1">
+            <s:Group x="0" y="0" alpha="0.9">
+                <s:Rect x="0" y="1" width="3" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="1" color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="0" y="1" width="3" height="1" rotation="90" transformX="1.5" transformY="0.5">
+                    <s:fill>
+                        <s:SolidColor alpha="1" color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+            </s:Group>
+            <s:Group x="0" y="0" alpha="0.35000000000000003">
+                <s:Rect x="0" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="2" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="2" y="2" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="0" y="2" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor color="#FFFFFF"/>
+                    </s:fill>
+                </s:Rect>
+            </s:Group>
+            <s:Group x="0" y="3">
+                <s:Rect x="0" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="0.15" color="#000000"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="2" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="0.15" color="#000000"/>
+                    </s:fill>
+                </s:Rect>
+                <s:Rect x="1" y="0" width="1" height="1">
+                    <s:fill>
+                        <s:SolidColor alpha="0.3" color="#000000"/>
+                    </s:fill>
+                </s:Rect>
+            </s:Group>
+        </s:Group>-->
+        
+        <!-- shadow (down states only) -->
+        
+        <!-- center -->
+        
+        <s:filters>
+            <s:GlowFilter color="#000" blurX="3" blurY="3" alpha=".3"/>
+        </s:filters>
+    </s:Group>
+    
+</s:Skin>

@@ -1,0 +1,1218 @@
+/*
+////////////////////////////////////////////////////////////////////////////////
+//
+//	KingnareBlackTheme v2.0.1 by Jinxin
+
+//  Copyright 2011 Kingnare.com
+//  All Rights Reserved.
+//
+//	Email: kingnare@gmail.com
+// 	2011.10.10
+//	
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+
+
+/*
+//------------------------------
+//  Namespaces
+//------------------------------
+*/
+
+/*Spark Namespace*/
+@namespace s "library://ns.adobe.com/flex/spark";
+
+/*Halo Namespace*/
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+/*
+//------------------------------
+//  Global
+//------------------------------
+*/
+global
+{
+    color:                      #CCCCCC;
+    modalTransparencyBlur:      2;
+    modalTransparencyColor:     #222222;
+    modalTransparency:          0.3;
+    modalTransparencyDuration:  200;
+    focusAlpha:                 0.05;
+    focusColor:                 #FFFFFF;
+    focusRoundedCorners:        0;
+    focusThickness:             0;
+    contentBackgroundColor:     #333333;
+}
+
+/*
+//==========================================================================================================================
+//
+// 							************************ Spark Skins ************************
+//
+//==========================================================================================================================
+*/
+
+/*
+//------------------------------
+// ** Spark WindowedApplication --------- AIR
+//------------------------------
+*/
+s|WindowedApplication
+{
+    backgroundColor: #333333;
+}
+
+
+/*
+//------------------------------
+// ** Spark Application
+//------------------------------
+*/
+s|Application
+{
+    backgroundColor:            #333333;
+    focusedTextSelectionColor:  #0167FF;
+    unfocusedTextSelectionColor:#999999;
+    inactiveTextSelectionColor: #0167FF;
+}
+
+/*
+//------------------------------
+//
+// **Spark Button
+//
+//------------------------------
+*/
+s|Button
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.Button.Button");
+    color:                      #AAAAAA;
+    textRollOverColor:          #FF0000;
+    textSelectedColor:          #FFFFFF;
+    disabledColor:              #5A5A5A;
+}
+
+/* 
+//------------------------------ 
+//  **Spark ButtonBar 
+//------------------------------ 
+*/ 
+s|ButtonBar
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.ButtonBar.ButtonBar");
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    disabledColor:              #444444;
+}
+
+/*
+//------------------------------
+//
+// **Spark BorderContainer
+//
+//------------------------------
+*/
+s|BorderContainer
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.BorderContainer.BorderContainerSkin");
+    borderColor:                #000000;
+    backgroundColor:            #222222;
+    backgroundAlpha:            1.0;
+}
+
+/*
+//------------------------------
+//
+// **Spark CheckBox
+//
+//------------------------------
+*/
+s|CheckBox
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.CheckBox.CheckBox");
+}
+
+/*
+//------------------------------
+//
+// **Spark ComboBox
+//
+//------------------------------
+*/
+s|ComboBox
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.ComboBox.ComboBox");
+    symbolColor:                #FFFFFF;
+}
+
+/*
+//------------------------------
+//  **Spark DataGrid
+//------------------------------
+*/
+s|DataGrid
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.DataGrid.SDataGrid");
+    stretchCursor:              Embed(source="kingnarestyle.swf",symbol="DataGrid_stretchCursor");
+    contentBackgroundColor:     #222222;
+    borderColor:                #111111;
+    selectionColor:             #444444;
+    rollOverColor:              #333333;
+    alternatingItemColors:      #222222, #222222;
+    symbolColor:                #FFFFFF;
+    caretColor:                 #666666;
+}
+
+/*
+//------------------------------
+//  **Spark DropDownList
+//------------------------------
+*/
+s|DropDownList
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.DropDownList.DropDownList");
+    symbolColor:                #FFFFFF;
+}
+
+/*
+//------------------------------
+//
+// **Spark HScrollBar
+//
+//------------------------------
+*/
+s|HScrollBar
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.HScrollbar.HScrollbar");
+}
+
+
+/*
+//------------------------------
+//
+// **Spark HSlider
+//
+//------------------------------
+*/
+s|HSlider
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.HSlider.HSlider");
+}
+
+/*
+//------------------------------
+//
+// **Spark List
+//
+//------------------------------
+*/
+s|List
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.List.List");
+    contentBackgroundColor:     #222222;
+    borderColor:                #111111;
+    selectionColor:             #444444;
+    rollOverColor:              #333333;
+    alternatingItemColors:      #222222, #222222;
+}
+
+/*
+//------------------------------
+//
+//  Spark NumericStepper
+//
+//------------------------------
+*/
+s|NumericStepper
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.NumericStepper.NumericStepper");   
+    symbolColor:                #FFFFFF;
+}
+
+/*
+//------------------------------
+//
+//  ** Spark Panel
+//
+//------------------------------
+*/
+s|Panel
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.PanelSkin.Panel");
+    backgroundColor:            #3A3A3A;
+    backgroundAlpha:            1.0;
+    borderColor:                #555555;
+    borderAlpha:                0.9;
+    dropShadowVisible:          true;
+    cornerRadius:               2;
+}
+
+/*
+//------------------------------
+//
+// **Spark RadioButton
+//
+//------------------------------
+*/
+s|RadioButton
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.RadioButton.RadioButton");
+}
+
+
+/*
+//------------------------------
+//
+//  Spark Spinner
+//
+//------------------------------
+*/
+s|Spinner
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.Spinner.Spinner");
+    symbolColor:                #FFFFFF;
+}
+
+/*
+//------------------------------
+//
+//  Spark TabBar
+//
+//------------------------------
+*/
+s|TabBar
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.TabBar.TabBar");
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #CCCCCC;
+    disabledColor:              #444444;
+}
+
+/*
+//------------------------------
+//
+//  Spark TextInput
+//
+//------------------------------
+*/
+s|TextInput
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.TextInput.TextInput");
+}
+
+/*
+//------------------------------
+//
+//  Spark TextArea
+//
+//------------------------------
+*/
+s|TextArea
+{
+    skinClass:                  ClassReference('com.kingnare.skin.spark.TextArea.TextArea');
+}
+
+/*
+//------------------------------
+//
+//  ** Spark TitleWindow
+//
+//------------------------------
+*/
+s|TitleWindow
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.TitleWindow.TitleWindow");
+    backgroundColor:            #3A3A3A;
+    backgroundAlpha:            1.0;
+    borderColor:                #555555;
+    borderAlpha:                0.9;
+    dropShadowVisible:          true;
+    cornerRadius:               2;
+}
+
+/*
+//------------------------------
+//
+//  Spark ToggleButton
+//
+//------------------------------
+*/
+s|ToggleButton
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.ToggleButton.ToggleButton"); 
+}
+
+
+/*
+//------------------------------
+//
+//  Spark VideoPlayer
+//
+//------------------------------
+*/
+s|VideoPlayer
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.VideoPlayer.VideoPlayer");
+    
+}
+
+/*
+//------------------------------
+//  Spark VScrollBar
+//------------------------------
+*/
+s|VScrollBar
+{
+    skinClass:                  ClassReference("com.kingnare.skin.spark.VScrollbar.VScrollbar");
+}
+
+/*
+//------------------------------
+//
+// **Spark VSlider
+//
+//------------------------------
+*/
+s|VSlider
+{
+    skinClass:                   ClassReference("com.kingnare.skin.spark.VSlider.VSlider");
+}
+
+
+
+
+/*
+//==========================================================================================================================
+//
+// 							************************ Halo Skins ************************
+//
+//==========================================================================================================================
+*/
+
+/*
+//------------------------------
+//  Halo Accordion
+//------------------------------
+*/
+mx|Accordion
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Border.WhiteBorder");
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    disabledColor:              #5A5A5A;
+    backgroundColor:            #333333;
+    borderColor:                #000000;
+}
+
+
+/*
+//------------------------------
+//  Halo AccordionHeader
+//------------------------------
+*/
+mx|AccordionHeader
+{
+    
+    disabledSkin:               Embed(source="kingnarestyle.swf", symbol="AccordionHeader_disabledSkin");
+    downSkin:                   Embed(source="kingnarestyle.swf", symbol="AccordionHeader_downSkin");
+    overSkin:                   Embed(source="kingnarestyle.swf", symbol="AccordionHeader_overSkin");
+    selectedDisabledSkin:       Embed(source="kingnarestyle.swf", symbol="AccordionHeader_disabledSkin");
+    selectedDownSkin:           Embed(source="kingnarestyle.swf", symbol="AccordionHeader_downSkin");
+    selectedOverSkin:           Embed(source="kingnarestyle.swf", symbol="AccordionHeader_overSkin");
+    selectedUpSkin:             Embed(source="kingnarestyle.swf", symbol="AccordionHeader_selectedSkin");
+    upSkin:                     Embed(source="kingnarestyle.swf", symbol="AccordionHeader_upSkin");
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #444444;
+    disabledColor:              #111111;
+    selectedColor:              #FFFFFF;
+}
+
+/*
+//------------------------------
+//  Halo Alert
+//------------------------------
+*/
+mx|Alert
+{
+    backgroundAlpha:            1;
+    borderAlpha:                1;
+    backgroundColor:            #222222;
+    borderColor:                #555555;
+    buttonStyleName:            Button;
+    paddingBottom:              8;
+}
+
+/*
+//------------------------------
+//  Halo Button
+//------------------------------
+*/
+mx|Button
+{
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    disabledColor:              #5A5A5A;
+    fontWeight:                 normal;
+    
+    upSkin:                     Embed(source="kingnarestyle.swf", symbol="Button_upSkin");
+    overSkin:                   Embed(source="kingnarestyle.swf", symbol="Button_overSkin");
+    downSkin:                   Embed(source="kingnarestyle.swf", symbol="Button_downSkin");
+    disabledSkin:               Embed(source="kingnarestyle.swf", symbol="Button_disabledSkin");
+    
+    selectedUpSkin:             Embed(source='kingnarestyle.swf', symbol='Button_selectedUpSkin');
+    selectedOverSkin:           Embed(source='kingnarestyle.swf', symbol='Button_selectedOverSkin');
+    selectedDownSkin:           Embed(source='kingnarestyle.swf', symbol='Button_selectedDownSkin');
+    selectedDisabledSkin:       Embed(source='kingnarestyle.swf', symbol='Button_selectedDisabledSkin');
+}
+
+/*
+//------------------------------
+//  Halo ControlBar
+//------------------------------
+*/
+mx|ControlBar
+{
+    borderSkin:                 Embed(source="kingnarestyle.swf", symbol="Control_borderSkin");
+}
+
+.windowTitle
+{
+    verticalAlign:              middle; 
+}
+
+.PanelWithControlBar
+{
+    backgroundImage:            Embed(source="kingnarestyle.swf", symbol="Panel_SpBackgroundImage");
+}
+
+/*
+//------------------------------
+//  Halo CursorManager
+//------------------------------
+*/
+mx|CursorManager
+{
+    busyCursor:                 Embed(source="kingnarestyle.swf", symbol="BusyCursor");
+    busyCursorBackground:       Embed(source="kingnarestyle.swf",symbol="BusyCursor");
+}
+
+/*
+//------------------------------
+//  Halo ColorPicker
+//------------------------------
+*/
+mx|ColorPicker
+{
+    focusAlpha:             	0;
+    swatchPanelStyleName:       mySwatchPanelStyle;
+    disabledSkin:               Embed(source="kingnarestyle.swf", symbol="ColorPicker_disabledSkin");
+    downSkin:                   Embed(source="kingnarestyle.swf", symbol="ColorPicker_downSkin");
+    overSkin:                   Embed(source="kingnarestyle.swf", symbol="ColorPicker_overSkin");
+    upSkin:                     Embed(source="kingnarestyle.swf", symbol="ColorPicker_upSkin");
+    editableDisabledSkin:       Embed(source="kingnarestyle.swf", symbol="ColorPicker_disabledSkin");
+    editableDownSkin:           Embed(source="kingnarestyle.swf", symbol="ColorPicker_downSkin");
+    editableOverSkin:           Embed(source="kingnarestyle.swf", symbol="ColorPicker_overSkin");
+    editableUpSkin:             Embed(source="kingnarestyle.swf", symbol="ColorPicker_upSkin");
+}
+.mySwatchPanelStyle
+{
+    backgroundColor:            #222222;
+    highlightColor:             #222222;
+    borderStyle:                solid;
+    borderColor:                #000000;
+    borderThickness:            1;
+    columnCount:                20;
+    horizontalGap:              0;
+    previewHeight:              22;
+    previewWidth:               50;
+    swatchBorderColor:          #000000;
+    swatchGridBackgroundColor:  #000000;
+    swatchGridBorderSize:       0;
+    swatchHeight:               12;
+    swatchHighlightColor:       #FFFFFF;
+    swatchHighlightSize:        1;
+    swatchWidth:                12;
+    textFieldWidth:             72;
+    verticalGap:                0;
+    shadowColor:                #000000;
+}
+
+/*
+//------------------------------
+//  Halo DateChooser
+//------------------------------
+*/
+mx|DateChooser
+{   
+    prevMonthSkin:              ClassReference("com.kingnare.skin.mx.DateChooser.DateChooserPrevMonthSkin");
+    nextMonthSkin:              ClassReference("com.kingnare.skin.mx.DateChooser.DateChooserNextMonthSkin");
+    prevYearSkin:               ClassReference("com.kingnare.skin.mx.DateChooser.DateChooserPrevYearSkin");
+    nextYearSkin:               ClassReference("com.kingnare.skin.mx.DateChooser.DateChooserNextYearSkin");
+    rollOverIndicatorSkin:      ClassReference("com.kingnare.skin.mx.DateChooser.DateChooserRollOverIndicatorSkin");
+    selectionIndicatorSkin:     ClassReference("com.kingnare.skin.mx.DateChooser.DateChooserSelectionIndicatorSkin");
+    todayIndicatorSkin:         ClassReference("com.kingnare.skin.mx.DateChooser.DateChooserTodayIndicatorSkin");
+    
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Border.BorderSkin");
+    contentBackgroundColor:     #222222;
+    symbolColor:                #FFFFFF;
+    fillAlphas:                 0.79, 1, 1, 0.45;
+    headerColors:               #3F3F3F, #2F2F2F;
+    fillColors:                 #000000, #000000, #ffffff, #eeeeee;
+    rollOverColor:              #333333;
+    selectionColor:             #111111;
+    borderColor:                #000000;
+    focusSkin:                  ClassReference(null); 
+    headerStyleName:            myDateChooserHeaderStyle;
+    
+    todayColor:                 #666666;
+}
+
+.myDateChooserHeaderStyle
+{
+    fontWeight:                 bold;
+    fontStyle:                  normal;
+    textDecoration:             none;
+}
+
+/*
+//------------------------------
+//  Halo DateField
+//------------------------------
+*/
+mx|DateField
+{
+    upSkin:	                    Embed(source="kingnarestyle.swf", symbol="DateField_upSkin");
+    overSkin:	                Embed(source="kingnarestyle.swf", symbol="DateField_overSkin");
+    downSkin:	                Embed(source="kingnarestyle.swf", symbol="DateField_downSkin");
+    disabledSkin:	            Embed(source="kingnarestyle.swf", symbol="DateField_disabledSkin");
+}
+
+/*
+//------------------------------
+//  Halo LinkBar
+//------------------------------
+*/
+mx|LinkBar
+{
+    contentBackgroundAlpha:     0;
+    disabledColor:              #666666;
+}
+
+/*
+//------------------------------
+//  Halo LinkButton
+//------------------------------
+*/
+mx|LinkButton
+{
+    color:                      #EEEEEE;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #666666;
+    rollOverColor:              #222222;
+    selectionColor:             #000000;
+    focusAlpha:                 0.1;
+    cornerRadius:               0;
+}
+
+/*
+//------------------------------
+//  Halo HDividedBox
+//------------------------------
+*/
+mx|HDividedBox
+{
+    dividerSkin:                Embed(source="kingnarestyle.swf",symbol="DividedBox_HDividerSkin");
+    horizontalDividerCursor:    Embed(source="kingnarestyle.swf",symbol="DividedBox_horizontalCursor");
+    dividerColor:               #000000;
+    horizontalGap:              6;
+}
+
+/*
+//------------------------------
+//  Halo HRule
+//------------------------------
+*/
+mx|HRule
+{
+    strokeColor:                #000000;
+    shadowColor:                #CCCCCC;
+    strokeWidth:                1;
+}
+
+/*
+//------------------------------
+//  Halo Menu
+//------------------------------
+*/
+mx|Menu
+{
+    branchIcon:                 Embed(source="kingnarestyle.swf",symbol="Menu_branchIcon");
+    branchDisabledIcon:         Embed(source="kingnarestyle.swf",symbol="Menu_branchDisabledIcon");
+    checkIcon:                  Embed(source="kingnarestyle.swf",symbol="Menu_checkIcon");
+    checkDisabledIcon:          Embed(source="kingnarestyle.swf",symbol="Menu_checkDisabledIcon");
+    radioIcon:                  Embed(source="kingnarestyle.swf",symbol="Menu_radioIcon");
+    radioDisabledIcon:          Embed(source="kingnarestyle.swf",symbol="Menu_radioDisabledIcon");
+    separatorSkin:              Embed(source="kingnarestyle.swf",symbol="Menu_separatorSkin");
+    borderColor:                #000000;
+    roundedCorners:             0;
+    color:                      #CCCCCC;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #DDDDDD;
+    rollOverColor:              #333333;
+    selectionColor:             #444444;
+}
+
+/*
+//------------------------------
+//  Halo MenuBar
+//------------------------------
+*/
+mx|MenuBar
+{
+    
+    backgroundSkin:             Embed(source="kingnarestyle.swf", symbol="MenuBar_backgroundSkin");
+    itemUpSkin:                 Embed(source="kingnarestyle.swf", symbol="MenuBar_itemUpSkin");
+    itemOverSkin:               Embed(source="kingnarestyle.swf", symbol="MenuBar_itemOverSkin");
+    itemDownSkin:               Embed(source="kingnarestyle.swf", symbol="MenuBar_itemDownSkin");
+    color:                      #AAAAAA;
+    textSelectedColor:          #FFFFFF;
+    textRollOverColor:          #FFFFFF;
+    rollOverColor:              #FFFFFF;
+    menuStyleName:              dropDown;
+    disabledColor:              #AAB3B3;
+}
+
+.dropDown {
+    branchIcon:                 Embed(source="kingnarestyle.swf",symbol="Menu_branchIcon");
+    branchDisabledIcon:         Embed(source="kingnarestyle.swf",symbol="Menu_branchDisabledIcon");
+    checkIcon:                  Embed(source="kingnarestyle.swf",symbol="Menu_checkIcon");
+    checkDisabledIcon:          Embed(source="kingnarestyle.swf",symbol="Menu_checkDisabledIcon");
+    radioIcon:                  Embed(source="kingnarestyle.swf",symbol="Menu_radioIcon");
+    radioDisabledIcon:          Embed(source="kingnarestyle.swf",symbol="Menu_radioDisabledIcon");
+    separatorSkin:              Embed(source="kingnarestyle.swf",symbol="Menu_separatorSkin");
+    backgroundImage:            Embed(source="kingnarestyle.swf", symbol="BackgroundSkin");
+    
+    contentBackgroundColor:     #333333;
+    borderColor:                #000000;
+    cornerRadius:               0;
+    color:                      #CCCCCC;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #DDDDDD;
+    rollOverColor:              #333333;
+    selectionColor:             #444444;
+    symbolColor:                #FFFFFF;
+    
+    verticalAlign:              middle;
+}
+
+/*
+//------------------------------
+//  Halo Panel
+//------------------------------
+*/
+mx|Panel
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Panel.PanelBorderSkin");
+    titleBackgroundSkin:        Embed(source="kingnarestyle.swf", symbol="Panel_titleBackgroundSkin");
+    backgroundColor:            #3A3A3A;
+    backgroundAlpha:            1.0;
+    borderColor:                #555555;
+    borderAlpha:                0.9;
+    dropShadowVisible:          true;
+    cornerRadius:               2;
+    headerHeight:               28;
+    titleStyleName:             windowTitle;
+    controlBarStyleName:        ControlBar;
+    
+}
+
+/*
+//------------------------------
+//  Halo PopUpButton
+//------------------------------
+*/
+mx|PopUpButton
+{
+    upSkin:                     ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    disabledSkin:               ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    downSkin:                   ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    overSkin:                   ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    popUpDownSkin:              ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    popUpOverSkin:              ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    color:                      #CCCCCC;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    textDisabledColor:          #1E1E1E;
+    fontWeight:                 normal;
+    arrowButtonWidth:           16;
+    rollOverColor:              #000000;
+    selectionColor:             #444444;
+    popUpStyleName:             popUp;
+}
+
+/*
+//------------------------------
+//  Halo PopUpMenuButton
+//------------------------------
+*/
+mx|PopUpMenuButton
+{
+    upSkin:                     ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    disabledSkin:               ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    downSkin:                   ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    overSkin:                   ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    popUpDownSkin:              ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    popUpOverSkin:              ClassReference("com.kingnare.skin.mx.PopUpButton.PopUpButtonSkin");
+    
+    color:                      #cccccc;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    textDisabledColor:          #1E1E1E;
+    fontWeight:                 normal;
+    arrowButtonWidth:           16;
+    popUpStyleName:             popUp;
+}
+
+.popUp
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Border.BorderSkin");
+    borderColor:                #111111;
+    contentBackgroundColor:     #000000;
+}
+
+/*
+//------------------------------
+//  Halo ProgressBar
+//------------------------------
+*/
+mx|ProgressBar
+{
+    color:                      #CCCCCC;
+    chromeColor:                #333333;
+    
+    barSkin:                    ClassReference("com.kingnare.skin.mx.ProgressBar.ProgressBarSkin");
+    indeterminateSkin:          ClassReference("com.kingnare.skin.mx.ProgressBar.ProgressIndeterminateSkin");
+    trackSkin:                  ClassReference("com.kingnare.skin.mx.ProgressBar.ProgressBarTrackSkin");
+}
+
+/*
+//------------------------------
+//  Halo TabBar
+//------------------------------
+*/
+mx|TabBar
+{
+    firstTabStyleName:          tabStyle;
+    tabStyleName:               tabStyle;
+    buttonStyleName:            tabStyle;
+    lastTabStyleName:           tabStyle;
+    selectedTabTextStyleName:   selectedTabText;
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #CCCCCC;
+    disabledColor:              #111111;
+}
+
+.tabStyle 
+{
+    disabledSkin:               Embed(source="kingnarestyle.swf", symbol="Tab_disabledSkin");
+    downSkin:                   Embed(source="kingnarestyle.swf", symbol="Tab_downSkin"); 
+    overSkin:                   Embed(source="kingnarestyle.swf", symbol="Tab_overSkin"); 
+    selectedDisabledSkin:       Embed(source="kingnarestyle.swf", symbol="TabSelected_disabledSkin");
+    selectedDownSkin:           Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin");
+    selectedOverSkin:           Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin");  
+    selectedUpSkin:             Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin"); 
+    upSkin:                     Embed(source="kingnarestyle.swf", symbol="Tab_upSkin"); 
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+}
+
+.selectedTabText 
+{
+    color:                      #FFFFFF;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #AAAAAA;
+    disabledColor:              #111111;
+}
+
+/*
+//------------------------------
+//  Halo TabNavigator
+//------------------------------
+*/
+mx|TabNavigator
+{
+    borderStyle:                solid;
+    borderColor:                #000000;
+    backgroundColor:            #333333;
+    fontWeight:                 normal;
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #444444;
+    disabledColor:              #111111;
+    paddingTop:                 0;
+}
+
+/*
+//------------------------------
+//  Halo TextInput
+//------------------------------
+*/
+mx|TextInput
+{
+    borderSkin:                 Embed(source="kingnarestyle.swf", symbol="TextInput_borderSkin");
+    paddingTop:                 2;
+    focusAlpha:                 0;
+}
+
+/*
+//------------------------------
+//  Halo ToggleButtonBar
+//------------------------------
+*/
+mx|ToggleButtonBar 
+{ 
+    buttonStyleName:            middleButtonBarButton; 
+    firstButtonStyleName:       firstButtonBarButton;
+    lastButtonStyleName:        lastButtonBarButton;
+}
+
+.firstButtonBarButton
+{ 
+    disabledSkin:               Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstDisabledSkin"); 
+    downSkin:                   Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstDownSkin"); 
+    overSkin:                   Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstOverSkin"); 
+    selectedDisabledSkin:       Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstSelectedDisabledSkin"); 
+    selectedDownSkin:           Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstSelectedUpSkin"); 
+    selectedOverSkin:           Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstSelectedUpSkin");
+    selectedUpSkin:             Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstSelectedUpSkin");
+    upSkin:                     Embed(source="kingnarestyle.swf", symbol="ButtonBar_firstUpSkin");
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    disabledColor:              #444444;
+}
+
+.middleButtonBarButton 
+{ 
+    disabledSkin:               Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonDisabledSkin"); 
+    downSkin:                   Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonDownSkin"); 
+    overSkin:                   Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonOverSkin"); 
+    selectedDisabledSkin:       Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonSelectedDisabledSkin"); 
+    selectedDownSkin:           Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonSelectedUpSkin"); 
+    selectedOverSkin:           Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonSelectedUpSkin");
+    selectedUpSkin:             Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonSelectedUpSkin");
+    upSkin:                     Embed(source="kingnarestyle.swf", symbol="ButtonBar_buttonUpSkin");
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    disabledColor:              #444444;
+}
+
+.lastButtonBarButton 
+{ 
+    disabledSkin:               Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastDisabledSkin"); 
+    downSkin:                   Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastDownSkin"); 
+    overSkin:                   Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastOverSkin"); 
+    selectedDisabledSkin:       Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastSelectedDisabledSkin"); 
+    selectedDownSkin:           Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastSelectedUpSkin"); 
+    selectedOverSkin:           Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastSelectedUpSkin");
+    selectedUpSkin:             Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastSelectedUpSkin");
+    upSkin:                     Embed(source="kingnarestyle.swf", symbol="ButtonBar_lastUpSkin");
+    color:                      #AAAAAA;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    disabledColor:              #444444; 
+}
+
+/*
+//------------------------------
+//  Halo ToolTip
+//------------------------------
+*/
+mx|ToolTip
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.ToolTip.ToolTipBorder");
+    color:                      #CCCCCC;
+    backgroundColor:            #000000;
+    borderColor:                #444444;
+    borderAlpha:                1;
+    cornerRadius:               0;
+}
+
+/*
+//------------------------------
+//  Halo Tree
+//------------------------------
+*/
+mx|Tree
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Tree.TreeBorder");
+    defaultLeafIcon:            Embed(source="kingnarestyle.swf",symbol="Tree_defaultLeafIcon");
+    disclosureClosedIcon:       Embed(source="kingnarestyle.swf",symbol="Tree_disclosureClosedIcon");
+    disclosureOpenIcon:         Embed(source="kingnarestyle.swf",symbol="Tree_disclosureOpenIcon");
+    folderClosedIcon:           Embed(source="kingnarestyle.swf",symbol="Tree_folderClosedIcon");
+    folderOpenIcon:             Embed(source="kingnarestyle.swf",symbol="Tree_folderOpenIcon");
+    roll-over-color:            #333333;
+    selection-color:            #444444;
+    textSelectedColor:          #FFFFFF;
+    textRollOverColor:          #CCCCCC;
+}
+
+/*
+//------------------------------
+//  Halo VDividedBox
+//------------------------------
+*/
+mx|VDividedBox
+{
+    dividerSkin:                Embed(source="kingnarestyle.swf",symbol="DividedBox_VDividerSkin");
+    verticalDividerCursor:      Embed(source="kingnarestyle.swf",symbol="DividedBox_verticalCursor");
+    dividerColor:               #000000;
+    verticalGap:                6;
+    verticalAlign:              top;
+}
+
+/*
+//------------------------------
+//  Halo VRule
+//------------------------------
+*/
+mx|VRule
+{
+    strokeColor:                #000000;
+    shadowColor:                #CCCCCC;
+    strokeWidth:                1;
+}
+
+/*
+//------------------------------
+//  Halo VScrollBar
+//------------------------------
+*/
+mx|VScrollBar
+{
+    trackUpSkin:                Embed(source="kingnarestyle.swf", symbol="ScrollBars_trackSkin");
+    trackOverSkin:              Embed(source="kingnarestyle.swf", symbol="ScrollBars_trackSkin");
+    trackDownSkin:              Embed(source="kingnarestyle.swf", symbol="ScrollBars_trackSkin");
+    trackDisabledSkin:          Embed(source="kingnarestyle.swf", symbol="ScrollBars_trackSkin");
+    
+    thumbUpSkin:                Embed(source="kingnarestyle.swf", symbol="ScrollBars_thumbUpSkin");
+    thumbOverSkin:              Embed(source="kingnarestyle.swf", symbol="ScrollBars_thumbOverSkin");
+    thumbDownSkin:              Embed(source="kingnarestyle.swf", symbol="ScrollBars_thumbDownSkin");
+    thumbIcon:	                Embed(source="kingnarestyle.swf", symbol="ScrollBars_thumbIcon");
+    
+    downArrowUpSkin:            Embed(source="kingnarestyle.swf", symbol="ScrollBars_downArrowUpSkin");
+    downArrowOverSkin:          Embed(source="kingnarestyle.swf", symbol="ScrollBars_downArrowOverSkin");
+    downArrowDownSkin:          Embed(source="kingnarestyle.swf", symbol="ScrollBars_downArrowDownSkin");
+    downArrowDisabledSkin:      Embed(source="kingnarestyle.swf", symbol="ScrollBars_downArrowDisabledSkin");
+    
+    upArrowUpSkin:              Embed(source="kingnarestyle.swf", symbol="ScrollBars_upArrowUpSkin");
+    upArrowOverSkin:            Embed(source="kingnarestyle.swf", symbol="ScrollBars_upArrowOverSkin");
+    upArrowDownSkin:            Embed(source="kingnarestyle.swf", symbol="ScrollBars_upArrowDownSkin");
+    upArrowDisabledSkin:        Embed(source="kingnarestyle.swf", symbol="ScrollBars_upArrowDisabledSkin");
+    
+    thumbOffset:                1;
+}
+
+/*
+//------------------------------
+//  Halo DataGrid
+//------------------------------
+*/
+mx|DataGrid
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Border.WhiteBorder");
+    columnDropIndicatorSkin:    Embed(source="kingnarestyle.swf", symbol="DataGrid_columnDropIndicatorSkin");
+    columnResizeSkin:           Embed(source="kingnarestyle.swf", symbol="DataGrid_columnResizeSkin");
+    headerSeparatorSkin:        Embed(source="kingnarestyle.swf", symbol="DataGrid_headerSeparatorSkin"); 
+    headerBackgroundSkin:       Embed(source="kingnarestyle.swf", symbol="DataGridHeaderBg");
+    sortArrowSkin:              Embed(source="kingnarestyle.swf", symbol="DataGrid_sortArrowSkin");
+    stretchCursor:              Embed(source="kingnarestyle.swf",symbol="DataGrid_stretchCursor");
+
+    rollOverColor:              #444444;
+    selectionColor:             #333333;
+    textRollOverColor:          #ffffff;
+    textSelectedColor:          #ffffff;
+    selectiondDisabledColor:    #000000;
+    alternatingItemColors:      #222222, #222222;
+    disabledColor:              #666666;
+    verticalGridLineColor:      #000000;
+    horizontalGridLines:        true;
+    verticalGridLineColor:      #111111;
+    horizontalGridLineColor:    #111111;
+    contentBackgroundColor:     #222222;
+    borderColor:                #111111;
+    symbolColor:                #FFFFFF;
+}
+
+/*
+//------------------------------
+//  Halo ComboBox
+//------------------------------
+*/
+mx|ComboBox
+{
+    upSkin:                     ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    overSkin:                   ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    downSkin:                   ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    disabledSkin:               ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    editableUpSkin:             ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    editableOverSkin:           ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    editableDownSkin:           ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    editableDisabledSkin:       ClassReference("com.kingnare.skin.mx.ComboBox.ComboBoxSkin");
+    
+    color:                      #CCCCCC;
+    textRollOverColor:          #FFFFFF;
+    textSelectedColor:          #FFFFFF;
+    textDisabledColor:          #1E1E1E;
+    cornerRadius:               0;
+    arrowButtonWidth:           18;
+    borderThickness:            0;
+    fontWeight:                 normal;
+    
+    backgroundDisabledColor:    #333333;
+    textInputStyleName:         comboboxInput;
+    dropdownStyleName:          dropDown;
+    
+}
+.comboboxInput
+{
+    borderSkin:                 Embed(source="kingnarestyle.swf", symbol="TextInput_borderSkin");
+}
+
+
+/*
+//------------------------------
+//  Halo OLAPDataGrid
+//------------------------------
+*/
+mx|OLAPDataGrid
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Border.WhiteBorder");
+    stretchCursor:              Embed(source="kingnarestyle.swf",symbol="DataGrid_stretchCursor");
+    disclosureClosedIcon:       Embed(source="kingnarestyle.swf",symbol="Tree_disclosureClosedIcon");
+    disclosureOpenIcon:         Embed(source="kingnarestyle.swf",symbol="Tree_disclosureOpenIcon");
+    columnResizeSkin:           Embed(source="kingnarestyle.swf", symbol="DataGrid_columnResizeSkin");
+    headerSeparatorSkin:        Embed(source="kingnarestyle.swf", symbol="DataGrid_headerSeparatorSkin"); 
+    sortArrowSkin:              Embed(source="kingnarestyle.swf", symbol="DataGrid_sortArrowSkin");
+    disabledColor:              #FF0000;
+    borderColor:                #111111;
+    selectionColor:             #444444;
+    rollOverColor:              #333333;
+    alternatingItemColors:      #222222, #222222;
+    symbolColor:                #FFFFFF;
+    caretColor:                 #666666;
+    textSelectedColor:          #FFFFFF;
+    headerColors:               #3F3F3F, #2F2F2F;
+    rowAxisHeaderStyleName:     rowAxisHeaderStyle;
+    columnAxisHeaderStyleName:  columnAxisHeaderStyle;
+    verticalGridLineColor:      #000000;
+}
+
+.rowAxisHeaderStyle
+{
+    color:                      #CCCCCC;
+    fontWeight:                 bold;
+}
+
+.columnAxisHeaderStyle
+{
+    color:                      #CCCCCC;
+    fontWeight:                 bold;
+}
+
+
+/*
+//------------------------------
+//  Halo AdvancedDataGrid
+//------------------------------
+*/
+mx|AdvancedDataGrid
+{
+    iconColor:                  #CCCCCC;
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Border.WhiteBorder");
+    headerSortSeparatorSkin:    Embed(source="kingnarestyle.swf", symbol="DataGrid_headerSeparatorSkin");
+    stretchCursor:              Embed(source="kingnarestyle.swf",symbol="DataGrid_stretchCursor");
+    defaultLeafIcon:            Embed(source="kingnarestyle.swf",symbol="Tree_defaultLeafIcon");
+    disclosureClosedIcon:       Embed(source="kingnarestyle.swf",symbol="Tree_disclosureClosedIcon");
+    disclosureOpenIcon:         Embed(source="kingnarestyle.swf",symbol="Tree_disclosureOpenIcon");
+    folderClosedIcon:           Embed(source="kingnarestyle.swf",symbol="Tree_folderClosedIcon");
+    folderOpenIcon:             Embed(source="kingnarestyle.swf",symbol="Tree_folderOpenIcon");
+    columnResizeSkin:           Embed(source="kingnarestyle.swf", symbol="DataGrid_columnResizeSkin");
+    sortArrowSkin:              Embed(source="kingnarestyle.swf", symbol="DataGrid_sortArrowSkin");
+    borderColor:                #111111;
+    selectionColor:             #444444;
+    rollOverColor:              #333333;
+    alternatingItemColors:      #222222, #222222;
+    symbolColor:                #FFFFFF;
+    caretColor:                 #666666;
+    textRollOverColor:          #CCCCCC;
+    textSelectedColor:          #FFFFFF;
+    headerColors:               #3F3F3F, #2F2F2F;
+    headerDragProxyStyleName:   rowAxisHeaderStyle;
+    rowAxisHeaderStyleName:     rowAxisHeaderStyle;
+    columnAxisHeaderStyleName:  columnAxisHeaderStyle;
+    verticalGridLineColor:      #000000;
+    horizontalGridLineColor:    #000000;
+}
+
+/*
+//------------------------------
+//  Halo AdvancedDataGridSortItemRenderer
+//------------------------------
+*/
+mx|AdvancedDataGridSortItemRenderer
+{
+    color:                      #CCCCCC;
+}
+
+/*
+//------------------------------
+//  Halo AdvancedDataGridHeaderRenderer
+//------------------------------
+*/
+mx|AdvancedDataGridHeaderRenderer
+{
+    color:                      #CCCCCC;
+    fontWeight:                 bold;
+}
+
+/*
+//------------------------------
+//  Halo FileSystemList --------- AIR
+//------------------------------
+*/
+mx|FileSystemList
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Tree.TreeBorder");
+    fileIcon:                   Embed(source="kingnarestyle.swf",symbol="Tree_defaultLeafIcon");
+    directoryIcon:              Embed(source="kingnarestyle.swf",symbol="Tree_folderClosedIcon");
+    roll-over-color:            #333333;
+    selection-color:            #444444;
+    textSelectedColor:          #FFFFFF;
+    textRollOverColor:          #CCCCCC;
+}
+
+/*
+//------------------------------
+//  Halo FileSystemDataGrid --------- AIR
+//------------------------------
+*/
+mx|FileSystemDataGrid
+{
+    borderSkin:                 ClassReference("com.kingnare.skin.mx.Tree.TreeBorder");
+    fileIcon:                   Embed(source="kingnarestyle.swf",symbol="Tree_defaultLeafIcon");
+    directoryIcon:              Embed(source="kingnarestyle.swf",symbol="Tree_folderClosedIcon");
+}
+
+/*
+//------------------------------
+//  End.
+//------------------------------
+*/

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        height="13" >
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.HScrollBar")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="normal" />
+        <s:State name="disabled" />
+        <s:State name="inactive" />
+    </s:states>
+    
+    
+    <s:Button id="track" y="0" left="17" right="17" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.HScrollbar.HScrollbarTrack"
+              alpha.disabled="0.5"
+              alpha.inactive="0.5"/>
+    
+    <s:Button id="thumb" x="17" y="0" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.HScrollbar.HScrollbarThumb"
+              alpha.disabled="0.5"
+              visible.inactive="false" alpha.inactive="0.5"/>
+    
+    <s:Button id="decrementButton" y="0" left="0" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.HScrollbar.HScrollbarLeftButton"
+              alpha.disabled="0.5"
+              alpha.inactive="0.5" enabled.inactive="false"/>
+    
+    <s:Button id="incrementButton" y="0" right="0" focusEnabled="false"
+              skinClass="com.kingnare.skin.spark.HScrollbar.HScrollbarRightButton"
+              alpha.disabled="0.5"
+              alpha.inactive="0.5" enabled.inactive="false"/>
+    
+</s:Skin>

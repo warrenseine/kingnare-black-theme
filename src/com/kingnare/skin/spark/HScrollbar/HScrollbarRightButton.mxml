@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        xmlns:d="http://ns.adobe.com/fxg/2008/dt"
+        width="18" height="13">
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over" />
+        <s:State name="down" />
+        <s:State name="disabled" />
+    </s:states>
+    
+    <s:Rect x="0.5" y="0.5" width="17" height="12">
+        <s:stroke>
+            <s:SolidColorStroke alpha="0.6" caps="square" color="#000000" joints="miter"
+                                color.disabled="#333333"/>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect x="1.5" y="1.5" width="15" height="10">
+        <s:stroke>
+            <s:SolidColorStroke alpha="0.15" caps="square" color="#FFFFFF" joints="miter"/>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect x="2" y="2" width="14" height="9">
+        <s:fill>
+            <s:SolidColor alpha="0.05" color="#FFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <s:Group alpha="0.5" horizontalCenter="0.5" verticalCenter="0"
+             alpha.over="1">
+        <s:filters>
+            <s:DropShadowFilter alpha="0.5" angle="90" blurX="1" blurY="1" color="#000000"
+                                distance="1" hideObject="false" inner="false" knockout="false"
+                                quality="2" strength="4"/>
+        </s:filters>
+        <s:Rect x="2" y="2" width="1" height="1">
+            <s:fill>
+                <s:SolidColor color="#FFFFFF"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect x="1" y="1" width="1" height="3">
+            <s:fill>
+                <s:SolidColor color="#FFFFFF"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect x="0" y="0" width="1" height="5">
+            <s:fill>
+                <s:SolidColor color="#FFFFFF"/>
+            </s:fill>
+        </s:Rect>
+    </s:Group>
+    
+    <!-- shadow (down state only) -->
+    
+    <!-- arrow -->
+    
+</s:Skin>

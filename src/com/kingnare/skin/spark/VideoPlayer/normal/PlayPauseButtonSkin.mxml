@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for the play/pause button of a Spark VideoPlayer component  
+      in the normal skin state. The normal skin state means the component is not in 
+      one of the <code>fullScreen</code> skin states.  
+
+      @see spark.components.VideoPlayer
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009" alpha.disabledStates="0.5">
+
+    <!-- host component -->
+    <fx:Metadata>
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("spark.components.ToggleButton")]
+    </fx:Metadata>
+    
+    <fx:Script fb:purpose="styling">
+        /* Define the skin elements that should not be colorized. */
+        static private const exclusions:Array = ["playSymbol", "pauseSymbol"];
+        
+        /**
+         * @private
+         */
+        override public function get colorizeExclusions():Array {return exclusions;}
+        
+        /* Define the symbol fill items that should be colored by the "symbolColor" style.*/
+        static private const symbols:Array = [];//["playSymbolFill", "pauseSymbolFill1_1", "pauseSymbolFill1_2", 
+                                              //"pauseSymbolFill1_3", "pauseSymbolFill1_4", "pauseSymbolFill1_5", 
+                                              //"pauseSymbolFill2_1", "pauseSymbolFill2_2", "pauseSymbolFill2_3", 
+                                              //"pauseSymbolFill2_4", "pauseSymbolFill2_5"];
+        
+        /**
+         * @private
+         */
+        override public function get symbolItems():Array {return symbols};
+        
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+    </fx:Script>
+    
+    <!-- states -->
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over" stateGroups="overStates" />
+        <s:State name="down" stateGroups="downStates" />
+        <s:State name="disabled" stateGroups="disabledStates" />
+        <s:State name="upAndSelected" stateGroups="selectedStates, selectedUpStates" />
+        <s:State name="overAndSelected" stateGroups="overStates, selectedStates" />
+        <s:State name="downAndSelected" stateGroups="downStates, selectedStates" />
+        <s:State name="disabledAndSelected" stateGroups="selectedUpStates, disabledStates, selectedStates" />
+    </s:states>
+    
+    <s:Rect left="0" right="0" top="0" bottom="0" width="38" height="24">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0x595959" alpha=".9" alpha.overStates="1"/>
+                <s:GradientEntry color="0x494949" alpha=".9" alpha.overStates="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:stroke>
+            <s:SolidColorStroke caps="none" color="#000000" joints="miter" miterLimit="4" weight="1"/>
+        </s:stroke>
+    </s:Rect>
+    <!-- layer 1: title bar highlight -->
+    <!--- @private -->
+    <s:Rect left="1" right="1" top="1" bottom="1">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90"  joints="miter" miterLimit="4" weight="1">
+                <s:GradientEntry color="#666666" />
+                <s:GradientEntry color="#4D4D4D" />
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    
+    <!--- Defines the play symbol. -->
+    <s:Group horizontalCenter="0" verticalCenter="-1" excludeFrom="selectedStates" id="playSymbol">
+        <!-- triangle -->
+        <!--<s:Path winding="evenOdd" data="M 1 0 L 1 13 L 8 7 L 1 0 Z">-->
+        <s:Path data="M 1 2 L 2 2 L 3 2 L 3 3 L 4 3 L 4 4 L 5 4 L 5 5 L 6 5 L 6 6 L 7 6 L 7 7 L 7 9 L 6 9 L 6 10 L 5 10 L 5 11 L 4 11 L 4 12 L 3 12 L 3 13 L 1 13 Z"
+                winding="evenOdd">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" alpha=".8" alpha.overStates="1" id="playSymbolFill"/>
+            </s:fill>
+        </s:Path>
+    </s:Group>
+    <!--- Defines the pause symbol. -->
+    <s:Group horizontalCenter="0" verticalCenter="0" 
+             includeIn="selectedStates" id="pauseSymbol">
+    
+        <!-- big line on left -->
+        <s:Rect left="0" top="0" height="11" width="3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha="0.8" alpha.overStates="1"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- big line on right -->
+        <s:Rect left="4" top="0" height="11" width="3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha="0.85" alpha.overStates="1"/>
+            </s:fill>
+        </s:Rect>
+        
+    </s:Group>
+</s:SparkSkin>

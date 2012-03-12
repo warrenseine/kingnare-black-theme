@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for the fullScreen button of a Spark VideoPlayer 
+      component while in one of the <code>fullScreen</code> skin states.  
+
+      @see spark.components.VideoPlayer
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"  
+      alpha.disabled="0.5">
+
+    <!-- host component -->
+    <fx:Metadata>
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata>
+    
+    <!-- states -->
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over" />
+        <s:State name="down" />
+        <s:State name="disabled"/>
+    </s:states>
+    
+    <s:Rect left="0" right="0" top="0" bottom="0" width="38" height="24">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0x595959" alpha=".9" alpha.over="1"/>
+                <s:GradientEntry color="0x494949" alpha=".9" alpha.over="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:stroke>
+            <s:SolidColorStroke caps="none" color="#000000" joints="miter" miterLimit="4" weight="1"/>
+        </s:stroke>
+    </s:Rect>
+    <!-- layer 1: title bar highlight -->
+    <!--- @private -->
+    <s:Rect left="1" right="1" top="1" bottom="1">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90"  joints="miter" miterLimit="4" weight="1">
+                <s:GradientEntry color="#666666" />
+                <s:GradientEntry color="#4D4D4D" />
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    
+    <!--- Defines the full-screen symbol. -->
+    <s:Group id="fullScreenSymbol" horizontalCenter="0" verticalCenter="0"
+             >
+        <!-- size of area so left, right, bottom, top work well -->
+        <s:Rect left="0" top="0" width="26" height="17">
+            <s:fill>
+                <s:SolidColor alpha="0" />
+            </s:fill>
+        </s:Rect>
+    
+        <!-- background for big rectangle -->
+        <s:Rect left="5" top="3" right="5" bottom="3">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".8"/>
+            </s:fill>
+        </s:Rect>
+       
+        
+        <!-- inside rect2 -->
+        <s:Rect left="7" top="5" right="7" bottom="5">
+            <s:fill>
+                <s:SolidColor color="0x333333" alpha=".6"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- inside rect3 -->
+        <s:Rect left="8" right="8" top="6" bottom="6">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- symbol -->
+        <s:Rect left="0" top="2" width="3" height="1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect left="2" top="0" width="1" height="2">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        
+        
+        <s:Rect right="0" top="2" width="3" height="1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect right="2" top="0" width="1" height="2">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- bottom-left -->
+        
+        <!-- symbol -->
+        <s:Rect left="0" bottom="3" width="3" height="1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect left="2" bottom="1" width="1" height="2">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        
+        
+        <!-- symbol -->
+        <s:Rect right="0" bottom="3" width="3" height="1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect right="2" bottom="1" width="1" height="2">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- bar down below -->
+        <s:Rect left="10" bottom="1" right="10" height="1">
+            <s:fill>
+                <s:SolidColor color="0xFFFFFF" alpha=".75"/>
+            </s:fill>
+        </s:Rect>
+        
+    </s:Group>
+    
+</s:Skin>

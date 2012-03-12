@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+<!--- The default skin class for the textInput of a Spark ComboBox component.  
+
+      @see spark.components.ComboBox
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009" 
+    blendMode="normal">
+
+    <fx:Metadata>
+    <![CDATA[ 
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("spark.components.TextInput")]
+    ]]>
+    </fx:Metadata> 
+    
+    <fx:Script fb:purpose="styling">
+        private var paddingChanged:Boolean;
+        private var cornerRadius:Number = 0;
+        
+        /* Define the skin elements that should not be colorized. */
+        static private const exclusions:Array = ["background", "textDisplay", "promptDisplay"];
+
+        /**
+         * @private
+         */   
+        override public function get colorizeExclusions():Array {return exclusions;}
+        
+        /* Define the content fill items that should be colored by the "contentBackgroundColor" style. */
+        static private const contentFill:Array = [];//["bgFill"];
+
+        /**
+         *  @private
+         */
+        override public function get contentItems():Array {return contentFill};
+        
+        /**
+         *  @private
+         */
+        override protected function commitProperties():void
+        {
+            super.commitProperties();
+            
+            if (paddingChanged)
+            {
+                updatePadding();
+                paddingChanged = false;
+            }
+        }
+        
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+        
+        /**
+         *  @private
+         */
+        override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+        {
+            if (getStyle("borderVisible") == true)
+            {
+                //border.visible = true;
+                //shadow.visible = true;
+                //background.left = background.top = background.right = background.bottom = 1;
+                textDisplay.left = textDisplay.right = 1;
+                if (promptDisplay)
+                {
+                    promptDisplay.setLayoutBoundsSize(unscaledWidth - 2, unscaledHeight - 2);
+                    promptDisplay.setLayoutBoundsPosition(1, 1);
+                }
+            }
+            else
+            {
+                //border.visible = false;
+                //shadow.visible = false;
+                //background.left = background.top = background.right = background.bottom = 0;
+                textDisplay.left = textDisplay.right = 0;
+                if (promptDisplay)
+                {
+                    promptDisplay.setLayoutBoundsSize(unscaledWidth, unscaledHeight);
+                    promptDisplay.setLayoutBoundsPosition(0, 0);
+                }
+            }
+            
+            //borderStroke.color = getStyle("borderColor");
+            //borderStroke.alpha = getStyle("borderAlpha");
+            
+            /* var cr:Number = getStyle("cornerRadius");
+            
+            if (cornerRadius != cr)
+            {
+                cornerRadius = cr;
+                shadow.bottomLeftRadiusX = shadow.topLeftRadiusX = cornerRadius;
+                border.bottomLeftRadiusX = border.topLeftRadiusX = cornerRadius;
+                background.bottomLeftRadiusX = background.topLeftRadiusX = cornerRadius;
+            } */
+            
+            super.updateDisplayList(unscaledWidth, unscaledHeight);
+        }
+
+        /**
+         *  @private
+         */
+        private function updatePadding():void
+        {
+            if (!textDisplay)
+                return;
+            
+            // Push padding styles into the textDisplay
+            var padding:Number;
+            
+            padding = getStyle("paddingLeft");
+            if (textDisplay.getStyle("paddingLeft") != padding)
+                textDisplay.setStyle("paddingLeft", padding);
+            
+            padding = getStyle("paddingTop");
+            if (textDisplay.getStyle("paddingTop") != padding)
+                textDisplay.setStyle("paddingTop", padding);
+            
+            padding = getStyle("paddingRight");
+            if (textDisplay.getStyle("paddingRight") != padding)
+                textDisplay.setStyle("paddingRight", padding);
+            
+            padding = getStyle("paddingBottom");
+            if (textDisplay.getStyle("paddingBottom") != padding)
+                textDisplay.setStyle("paddingBottom", padding);
+
+            if (!promptDisplay)
+                return;
+            
+            padding = getStyle("paddingLeft");
+            if (promptDisplay.getStyle("paddingLeft") != padding)
+                promptDisplay.setStyle("paddingLeft", padding);
+            
+            padding = getStyle("paddingTop");
+            if (promptDisplay.getStyle("paddingTop") != padding)
+                promptDisplay.setStyle("paddingTop", padding);
+            
+            padding = getStyle("paddingRight");
+            if (promptDisplay.getStyle("paddingRight") != padding)
+                promptDisplay.setStyle("paddingRight", padding);
+            
+            padding = getStyle("paddingBottom");
+            if (promptDisplay.getStyle("paddingBottom") != padding)
+                promptDisplay.setStyle("paddingBottom", padding);
+        }
+        
+        /**
+         *  @private
+         */
+        override public function styleChanged(styleProp:String):void
+        {
+            var allStyles:Boolean = !styleProp || styleProp == "styleName";
+
+            super.styleChanged(styleProp);
+            
+            if (allStyles || styleProp.indexOf("padding") == 0)
+            {
+                paddingChanged = true;
+                invalidateProperties();
+            }
+        }
+    </fx:Script>
+    
+    <fx:Script>
+        <![CDATA[
+            /** 
+             * @private 
+             */     
+            private static const focusExclusions:Array = ["textDisplay"];
+
+            /**
+             *  @private
+             */
+            override public function get focusSkinExclusions():Array { return focusExclusions;};
+        ]]>
+    </fx:Script>
+    
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="disabled" stateGroups="disabledStates"/>
+        <s:State name="normalWithPrompt"/>
+        <s:State name="disabledWithPrompt" stateGroups="disabledStates"/>
+    </s:states>
+    
+    
+    <s:Rect left="0" right="0" top="0" bottom="0">
+        <s:stroke>            
+            <s:SolidColorStroke caps="square" color="#FFFFFF" joints="miter"
+                                alpha.disabled="0.08"
+                                alpha.disabledWithPrompt="0.08"
+                                alpha.normal="0.1"
+                                alpha.normalWithPrompt="0.1"/>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect left="2" right="2" bottom="4" height="3">
+        <s:fill>
+            <s:SolidColor alpha.disabled="0.03" color.disabled="#FFFFFF"
+                          alpha.disabledWithPrompt="0.03" color.disabledWithPrompt="#FFFFFF"
+                          alpha.normal="0.1" color.normal="#000000"
+                          alpha.normalWithPrompt="0.1" color.normalWithPrompt="#000000"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect left="2" right="2" bottom="2" height="2">
+        <s:fill>
+            <s:SolidColor alpha.disabled="0.01" color.disabled="#FFFFFF"
+                          alpha.disabledWithPrompt="0.01" color.disabledWithPrompt="#FFFFFF"
+                          alpha.normal="0.15" color.normal="#000000"
+                          alpha.normalWithPrompt="0.15" color.normalWithPrompt="#000000"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect left="2" right="2" bottom="7"
+            top.disabled="2"
+            top.disabledWithPrompt="2"
+            top.normal="3"
+            top.normalWithPrompt="3">
+        <s:fill>
+            <s:SolidColor alpha.disabled="0.03" color.disabled="#FFFFFF" id="bgFill"
+                          alpha.disabledWithPrompt="0.03" color.disabledWithPrompt="#FFFFFF"
+                          alpha.normal="0.08" color.normal="#000000"
+                          alpha.normalWithPrompt="0.08" color.normalWithPrompt="#000000"/>
+        </s:fill>
+    </s:Rect>
+    
+    <!-- inner shadow -->
+    <s:Rect left="2" right="2" top="2" height="1" alpha="1">
+        <s:fill>
+            <s:SolidColor color="#000000"
+                          alpha.disabled="0.2"
+                          alpha.disabledWithPrompt="0.2"
+                          alpha.normal="0.3"
+                          alpha.normalWithPrompt="0.3"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect left="1" right="1" top="1" bottom="1">
+        <s:stroke>
+            <s:SolidColorStroke alpha="1" caps="square" joints="miter" miterLimit="4" weight="1"
+                                color.disabled="#111111"
+                                color.disabledWithPrompt="#111111"
+                                color.normal="#000000"
+                                color.normalWithPrompt="#000000"/>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect left="2" top="3" bottom="1" width="1">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry alpha="0.2" color="#000000" ratio="0"/>
+                <s:GradientEntry alpha="0.0" color="#000000" ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    <s:Rect right="2" top="3" bottom="1" width="1">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry alpha="0.2" color="#000000" ratio="0"/>
+                <s:GradientEntry alpha="0.0" color="#000000" ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    
+    
+    <!-- text -->
+    <!--- @copy spark.components.supportClasses.SkinnableTextBase#textDisplay -->
+    <s:RichEditableText id="textDisplay"
+              lineBreak="explicit"
+              widthInChars="10" verticalCenter="0"/>
+    <!--- Defines the Label that is used for prompt text. The includeInLayout property is false so the prompt text does not affect measurement. -->
+    <s:Label id="promptDisplay" maxDisplayedLines="1"
+                verticalAlign="middle"
+                mouseEnabled="false" mouseChildren="false"
+                includeIn="normalWithPrompt,disabledWithPrompt" 
+                includeInLayout="false"
+                />
+
+</s:SparkSkin>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        xmlns:d="http://ns.adobe.com/fxg/2008/dt"
+        width="102" height="17" fc:manageBounds="false">
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.HSlider")]
+    </fx:Metadata> 
+    
+    <fx:Declarations>
+        <!--- The tooltip used in the mx.controls.Slider control. 
+        To customize the DataTip's appearance, create a custom HSliderSkin class.-->
+        <fx:Component id="dataTip">     
+            <s:DataRenderer minHeight="20" minWidth="40" y="-34">  
+                <s:Rect top="0" left="0" right="0" bottom="0">
+                    <s:fill>
+                        <s:SolidColor color="0x000000" alpha=".9"/>
+                    </s:fill>
+                    <s:stroke>
+                        <s:SolidColorStroke color="0xFFFFFF" alpha=".2"/>
+                    </s:stroke>
+                    <s:filters>
+                        <s:DropShadowFilter angle="90" color="0x0" distance="1.5" strength="1.5"/>
+                    </s:filters>
+                </s:Rect>
+                <s:Label id="labelDisplay" text="{data}"
+                         horizontalCenter="0" verticalCenter="1"
+                         left="5" right="5" top="5" bottom="5"
+                         textAlign="center" verticalAlign="middle"
+                         fontWeight="normal" color="white" fontSize="11">
+                </s:Label>
+            </s:DataRenderer>
+        </fx:Component>
+    </fx:Declarations>
+    
+    <s:states>
+        <s:State name="normal" />
+        <s:State name="disabled" />
+    </s:states>
+    
+    
+    <s:Button id="track" left="2" top="3" bottom="3"
+              skinClass="com.kingnare.skin.spark.HSlider.HSliderTrack"
+              right.disabled="0" alpha.disabled="0.5"
+              right.normal="0"/>
+    <s:Button id="thumb" x="1" enabled="true" d:locked="true"
+              skinClass="com.kingnare.skin.spark.HSlider.HSliderThumb"
+              alpha.disabled="1" enabled.disabled="false" verticalCenter.disabled="0"
+              y.normal="1"/>
+    
+</s:Skin>

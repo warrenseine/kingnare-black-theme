@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for the fullScreen button of a Spark VideoPlayer component
+      in the normal skin state. The normal skin state means the component is not in 
+      one of the <code>fullScreen</code> skin states.  
+
+      @see spark.components.VideoPlayer
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" 
+    xmlns:fb="http://ns.adobe.com/flashbuilder/2009" alpha.disabled="0.5">
+
+    <!-- host component -->
+    <fx:Metadata>
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata>
+    
+    <fx:Script fb:purpose="styling">
+        /* Define the skin elements that should not be colorized. */
+        static private const exclusions:Array = ["fullScreenSymbol"];
+        
+        /**
+         * @private
+         */
+        override public function get colorizeExclusions():Array {return exclusions;}
+        
+        /* Define the symbol fill items that should be colored by the "symbolColor" style. */
+        static private const symbols:Array = [];//["fullScreenSymbolFill1", "fullScreenSymbolFill2", "fullScreenSymbolFill3", 
+                                              //"fullScreenSymbolTopLeftFill1", "fullScreenSymbolTopLeftFill2", 
+                                              //"fullScreenSymbolTopRightFill1", "fullScreenSymbolTopRightFill2", 
+                                              //"fullScreenSymbolBottomLeftFill1", "fullScreenSymbolBottomLeftFill2", 
+                                              //"fullScreenSymbolBottomRightFill1", "fullScreenSymbolBottomRightFill2"];
+        /**
+         * @private
+         */
+        override public function get symbolItems():Array {return symbols};
+        
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+    </fx:Script>
+    
+    <!-- states -->
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over" />
+        <s:State name="down" />
+        <s:State name="disabled"/>
+    </s:states>
+    
+    <s:Rect left="0" right="0" top="0" bottom="0" width="38" height="24">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0x595959" alpha=".9" alpha.over="1"/>
+                <s:GradientEntry color="0x494949" alpha=".9" alpha.over="1"/>
+            </s:LinearGradient>
+        </s:fill>
+        <s:stroke>
+            <s:SolidColorStroke caps="none" color="#000000" joints="miter" miterLimit="4" weight="1"/>
+        </s:stroke>
+    </s:Rect>
+    <!-- layer 1: title bar highlight -->
+    <!--- @private -->
+    <s:Rect left="1" right="1" top="1" bottom="1">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90"  joints="miter" miterLimit="4" weight="1">
+                <s:GradientEntry color="#666666" />
+                <s:GradientEntry color="#4D4D4D" />
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    
+    <!--- Defines the full-screen symbol. -->
+    <s:Group horizontalCenter="0" verticalCenter="0" id="fullScreenSymbol" alpha=".8" alpha.over="1">
+        <!-- size of area so left, right, bottom, top work well -->
+        <s:Rect left="0" top="0" width="19" height="14">
+            <s:fill>
+                <s:SolidColor alpha="0" />
+            </s:fill>
+        </s:Rect>
+    
+        <!-- background for big rectangle -->
+        <s:Rect left="2" top="2" right="2" bottom="2">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolFill1"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- inside rect2 -->
+        <s:Rect left="4" top="4" right="4" bottom="4">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolFill2"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- inside rect3 -->
+        <s:Rect left="5" top="5" right="5" bottom="5">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolFill3"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- top-left -->
+        
+        <!-- symbol -->
+        <s:Rect left="0" top="0" width="3" height="1">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolTopLeftFill1"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect left="0" top="1" width="1" height="2">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolTopLeftFill2"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- top-right -->
+        <!-- dropshadow -->
+
+        <!-- symbol -->
+        <s:Rect right="0" top="0" width="3" height="1">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolTopRightFill1"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect right="0" top="1" width="1" height="2">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolTopRightFill2"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- bottom-left -->
+        
+        <!-- symbol -->
+        <s:Rect left="0" bottom="0" width="3" height="1">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolBottomLeftFill1"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect left="0" bottom="1" width="1" height="2">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolBottomLeftFill2"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- bottom-right -->
+        
+        <!-- symbol -->
+        <s:Rect right="0" bottom="0" width="3" height="1"
+                >
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolBottomRightFill1"/>
+            </s:fill>
+        </s:Rect>
+        <s:Rect right="0" bottom="1" width="1" height="2">
+            <s:fill>
+                <!--- @private -->
+                <s:SolidColor color="0xFFFFFF" id="fullScreenSymbolBottomRightFill2"/>
+            </s:fill>
+        </s:Rect>
+    </s:Group>
+</s:SparkSkin>

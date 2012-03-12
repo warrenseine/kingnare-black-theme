@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    ADOBE SYSTEMS INCORPORATED
+    Copyright 2008 Adobe Systems Incorporated
+    All Rights Reserved.
+
+    NOTICE: Adobe permits you to use, modify, and distribute this file
+    in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for a Spark ToggleButton component.  
+
+     @see spark.components.ToggleButton
+        
+      @langversion 3.0
+      @playerversion Flash 10
+      @playerversion AIR 1.5
+      @productversion Flex 4
+-->
+<s:SparkButtonSkin xmlns:fx="http://ns.adobe.com/mxml/2009"
+                   xmlns:s="library://ns.adobe.com/flex/spark"
+                   xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+                   minWidth="21" minHeight="21"
+                   alpha.disabledStates="0.5" color.over="#FFFFFF">
+    
+    <!-- host component -->
+    <fx:Metadata>
+    <![CDATA[ 
+        /** 
+         * @copy spark.skins.spark.ApplicationSkin#hostComponent
+         */
+        [HostComponent("spark.components.ToggleButton")]
+    ]]>
+    </fx:Metadata>
+    
+    <fx:Script fb:purpose="styling">
+        /* Define the skin elements that should not be colorized. 
+           For toggle button, the graphics are colorized but the label is not. */
+        static private const exclusions:Array = ["labelDisplay"];
+
+        /**
+         * @private
+         */    
+        override public function get colorizeExclusions():Array {return exclusions;}
+        
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+        
+        /**
+         * @private
+         */
+        override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number) : void
+        {
+            var cr:Number = getStyle("cornerRadius");
+            
+            if (cornerRadius != cr)
+            {
+                cornerRadius = cr;
+                //shadow.radiusX = cornerRadius;
+                //fill.radiusX = cornerRadius;
+                //lowlight.radiusX = cornerRadius;
+                //highlight.radiusX = cornerRadius;
+                //border.radiusX = cornerRadius;
+            }
+            
+            //if (highlightStroke) highlightStroke.radiusX = cornerRadius;
+            //if (hldownstroke1) hldownstroke1.radiusX = cornerRadius;
+            //if (hldownstroke2) hldownstroke2.radiusX = cornerRadius;
+            
+            super.updateDisplayList(unscaledWidth, unscaledHeight);
+        }
+        
+        private var cornerRadius:Number = 2;
+    </fx:Script>
+    
+    <!-- states -->
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over" stateGroups="overStates" />
+        <s:State name="down" stateGroups="downStates" />
+        <s:State name="disabled" stateGroups="disabledStates" />
+        <s:State name="upAndSelected" stateGroups="selectedStates, selectedUpStates" />
+        <s:State name="overAndSelected" stateGroups="overStates, selectedStates" />
+        <s:State name="downAndSelected" stateGroups="downStates, selectedStates" />
+        <s:State name="disabledAndSelected" stateGroups="selectedUpStates, disabledStates, selectedStates" />
+    </s:states>
+    
+    <s:Rect id="lightRect" left="0" right="0" top="0" bottom="0">
+        <s:stroke>
+            <s:SolidColorStroke color="#ffffff" caps="none" joints="miter" miterLimit="4" weight="1" 
+                                alpha="0.1" alpha.down="0.15" alpha.disabled="0.05"
+                                alpha.selectedStates="0.2"/>
+        </s:stroke>
+    </s:Rect>
+    
+    <s:Rect top="1" bottom="1" right="1" left="1" id="innerRect">
+        <s:stroke>
+            <s:SolidColorStroke weight="1" caps="none" miterLimit="4" joints="miter" color="#000000" alpha="0.6"
+                                />
+        </s:stroke>
+    </s:Rect>
+    
+    
+    <s:Rect id="innerLightRect" top="2" right="2" left="2" bottom="2">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="#ffffff" color.over="#ffffff" color.down="#ffffff" color.disabled="#000000"
+                                 alpha="0.1" alpha.over="0.15" alpha.down="0.05" alpha.disabled="0.3"
+                                 ratio="0" color.selectedStates="#000000" alpha.selectedStates=".5"/>
+                <s:GradientEntry color="#ffffff" color.over="#ffffff" color.down="#ffffff" color.disabled="#000000"
+                                 alpha="0.0" alpha.over="0.05" alpha.down="0.0" alpha.disabled="0.3"
+                                 ratio="1" color.selectedStates="#000000" alpha.selectedStates=".4"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    
+    <s:Rect id="innerLightStroke" top="2" right="2" left="2" bottom="2">
+        <s:stroke>
+            <s:LinearGradientStroke weight="1" caps="none" miterLimit="4" joints="miter" rotation="90">
+                <s:GradientEntry color="#ffffff" color.down="#000000" color.disabled="#ffffff"
+                                 alpha="0.08"
+                                 ratio="0" alpha.down="0.2" alpha.disabled="0.05"/>
+                <s:GradientEntry color="#ffffff" alpha="0.03" ratio="1" ratio.down="1" color.down="#000000" alpha.down="0.1" color.disabled="#ffffff" alpha.disabled="0.05"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    <!-- layer 8: text -->
+    <!--- @copy spark.components.supportClasses.ButtonBase#labelDisplay -->
+    <s:Label id="labelDisplay"
+             textAlign="center"
+             verticalAlign="middle"
+             maxDisplayedLines="1"
+             horizontalCenter="0" verticalCenter="1"
+             left="10" right="10" top="2" bottom="2">
+    </s:Label>
+    
+</s:SparkButtonSkin>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+ADOBE SYSTEMS INCORPORATED
+Copyright 2008 Adobe Systems Incorporated
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file
+in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for the middle buttons in a Spark ButtonBar component.  
+
+@see spark.components.ButtonBar
+@see spark.components.ButtonBarButton
+
+@langversion 3.0
+@playerversion Flash 10
+@playerversion AIR 1.5
+@productversion Flex 4
+-->
+<s:SparkButtonSkin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+                   xmlns:s="library://ns.adobe.com/flex/spark" 
+                   xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+                   minWidth="21" minHeight="21" 
+                   alpha.disabled="0.5">
+    
+    <!-- host component -->
+    <fx:Metadata>
+        <![CDATA[ 
+        /** 
+        * @copy spark.skins.spark.ApplicationSkin#hostComponent
+        */
+        [HostComponent("spark.components.ButtonBarButton")]
+        ]]>
+    </fx:Metadata>
+    
+    <fx:Script fb:purpose="styling">
+        /* Define the skin elements that should not be colorized. 
+        For toggle button, the graphics are colorized but the label is not. */
+        static private const exclusions:Array = ["labelDisplay"];
+        
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+        
+        /** 
+         * @private
+         */     
+        override public function get colorizeExclusions():Array {return exclusions;}
+    </fx:Script>
+    
+    <!-- states -->
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over" stateGroups="overStates" />
+        <s:State name="down" stateGroups="downStates" />
+        <s:State name="disabled" stateGroups="disabledStates" />
+        <s:State name="upAndSelected" stateGroups="selectedStates, selectedUpStates" />
+        <s:State name="overAndSelected" stateGroups="overStates, selectedStates" />
+        <s:State name="downAndSelected" stateGroups="downStates, selectedStates" />
+        <s:State name="disabledAndSelected" stateGroups="selectedUpStates, disabledStates, selectedStates" />
+    </s:states>
+    
+    <!-- layer 2: fill -->
+    <!--- @private -->
+    <s:Rect id="fillbase" left="0" right="0" top="0" bottom="0">
+        <s:fill>
+            <s:SolidColor color="#333333"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect left="1" right="1" top="1" bottom="1">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0xFFFFFF"
+                                 alpha.selectedUpStates="0.05"
+                                 alpha.overAndSelected="0.08"
+                                 alpha.downStates="0.01"
+                                 alpha.over="0.15"
+                                 alpha="0.08" />
+                <s:GradientEntry color="0xFFFFFF" 
+                                 alpha.selectedUpStates="0.05"
+                                 alpha.overAndSelected="0.08"
+                                 alpha.downStates="0.01"
+                                 alpha.over="0.05" 
+                                 alpha="0.03"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    
+    <!-- layer 5: highlight stroke (all states except down) -->
+    <s:Rect left="1" right="1" top="1" bottom="1" excludeFrom="downStates">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90" weight="1">
+                <s:GradientEntry color="0xFFFFFF" 
+                                 alpha="0.1" 
+                                 alpha.selectedUpStates="0.2"
+                                 alpha.overAndSelected="0.2"
+                                 alpha.downStates="0.2"
+                                 color.selectedStates="0x000000"
+                                 color.down="0x000000"/>
+                <s:GradientEntry color="0xFFFFFF" 
+                                 alpha="0.03" 
+                                 alpha.selectedUpStates="0.15"
+                                 alpha.overAndSelected="0.15"
+                                 alpha.downStates="0.15"
+                                 color.selectedStates="0x000000"
+                                 color.down="0x000000"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    <s:Rect id="lowlightStroke" left="2" right="2" top="2" bottom="2"
+            includeIn="selectedStates">
+        <s:stroke>
+            <s:LinearGradientStroke rotation="90" weight="1">
+                <s:GradientEntry color="0x000000" 
+                                 alpha="0.08"/>
+                <s:GradientEntry color="0x000000" 
+                                 alpha="0.03"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    
+    <!-- layer 7: border - put on top of the fill so it doesn't disappear when scale is less than 1 -->
+    <s:Rect left="0" right="0" top="0" bottom="0">
+        <s:stroke>
+            <s:SolidColorStroke color="#000000"/>
+        </s:stroke>
+    </s:Rect>
+    
+    <!-- layer 8: text -->
+    <!---  @copy spark.components.supportClasses.ButtonBase#labelDisplay -->
+    <s:Label id="labelDisplay"
+             textAlign="center"
+             verticalAlign="middle"
+             maxDisplayedLines="1"
+             horizontalCenter="0" verticalCenter="1"
+             left="10" right="10" top="2" bottom="2">
+    </s:Label>
+    
+</s:SparkButtonSkin>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+ADOBE SYSTEMS INCORPORATED
+Copyright 2008 Adobe Systems Incorporated
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file
+in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<!--- The default skin class for the down button of a Spark NumericStepper component.  
+
+@see spark.components.NumericStepper
+
+@langversion 3.0
+@playerversion Flash 10
+@playerversion AIR 1.5
+@productversion Flex 4
+-->
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+             xmlns:fb="http://ns.adobe.com/flashbuilder/2009">
+    
+    <fx:Metadata>
+        <![CDATA[ 
+        /** 
+        * @copy spark.skins.spark.ApplicationSkin#hostComponent
+        */
+        [HostComponent("spark.components.Button")]
+        ]]>
+    </fx:Metadata> 
+    
+    <fx:Script fb:purpose="styling">
+        /* Define the skin elements that should not be colorized. 
+        For NumericStepper buttons, the graphics are colorized but the arrow is not. */
+        static private const exclusions:Array = ["arrow"];
+        
+        /**
+         * @private
+         */  
+        override public function get colorizeExclusions():Array {return exclusions;}
+        
+        /* Define the symbol fill items that should be colored by the "symbolColor" style. */
+        static private const symbols:Array = ["arrowFill"];
+        
+        /**
+         * @private
+         */
+        override public function get symbolItems():Array {return symbols};
+        
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void
+        {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+        
+        /**
+         *  @private
+         */
+        override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number) : void
+        {
+            var cr:Number = getStyle("cornerRadius");
+            
+            if (cornerRadius != cr)
+            {
+                cornerRadius = cr;
+                //fill.bottomRightRadiusX = cornerRadius;
+                //highlight.bottomRightRadiusX = cornerRadius;
+            }
+            
+            super.updateDisplayList(unscaledWidth, unscaledHeight);
+        }
+        
+        private var cornerRadius:Number = 2;
+    </fx:Script>
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over"/>
+        <s:State name="down" />
+        <s:State name="disabled" />
+    </s:states>
+    
+    <!-- layer 1: fill -->
+    <s:Rect id="lightRect" left="0" right="0" top="0" bottom="0" width="18" height="16" >
+        <s:stroke>
+            <s:SolidColorStroke color="#ffffff" caps="none" joints="miter" miterLimit="4" weight="1" 
+                                alpha="0.15" alpha.down="0.15" alpha.disabled="0.05"/>
+        </s:stroke>
+    </s:Rect>
+    
+    <s:Rect top="1" bottom="1" right="1" left="1" id="innerRect">
+        <s:stroke>
+            <s:SolidColorStroke weight="1" caps="none" miterLimit="4" joints="miter" color="#000000" alpha="0.6"/>
+        </s:stroke>
+    </s:Rect>
+    
+    <s:Rect id="innerLightRect" top="2" right="2" left="2" bottom="2">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="#ffffff" color.over="#ffffff" color.down="#ffffff" color.disabled="#000000"
+                                 alpha="0.1" alpha.over="0.15" alpha.down="0.05" alpha.disabled="0.3"
+                                 ratio="0"/>
+                <s:GradientEntry color="#ffffff" color.over="#ffffff" color.down="#ffffff" color.disabled="#000000"
+                                 alpha="0.0" alpha.over="0.05" alpha.down="0.0" alpha.disabled="0.3"
+                                 ratio="1"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    
+    <s:Rect id="innerLightStroke" top="2" right="2" left="2" bottom="2">
+        <s:stroke>
+            <s:LinearGradientStroke weight="1" caps="none" miterLimit="4" joints="miter" rotation="90">
+                <s:GradientEntry color="#ffffff" color.down="#000000" color.disabled="#ffffff"
+                                 alpha="0.08" 
+                                 ratio="0" alpha.down="0.2" alpha.disabled="0.05"/>
+                <s:GradientEntry color="#ffffff" alpha="0.03" ratio="1" ratio.down="1" color.down="#000000" alpha.down="0.1" color.disabled="#ffffff" alpha.disabled="0.05"/>
+            </s:LinearGradientStroke>
+        </s:stroke>
+    </s:Rect>
+    
+    <!-- arrow -->
+    <!--- Defines the appearance of the down arrow. -->
+    <s:Path horizontalCenter="0" verticalCenter="0" id="arrow"
+            data="M 3.0 3.0 L 3.0 2.0 L 4.0 2.0 L 4.0 1.0 L 5.0 1.0 L 5.0 0.0 L 0.0 0.0 L 0.0 1.0 L 1.0 1.0 L 1.0 2.0 L 2.0 2.0 L 2.0 3.0 L 3.0 3.0">
+        <s:fill>
+            <!--- @private
+            Defines the down arrow's fill. The default color is 0x000000. The default alpha is .8. -->
+            <s:SolidColor id="arrowFill" color="#FFFFFF" 
+                          alpha=".6" alpha.over="1.0" alpha.down=".6" alpha.disabled=".5"/>
+        </s:fill>
+    </s:Path>            
+    
+</s:SparkSkin>

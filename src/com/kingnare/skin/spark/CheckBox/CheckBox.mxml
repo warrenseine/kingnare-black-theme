@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        xmlns:d="http://ns.adobe.com/fxg/2008/dt"
+        width="73" height="13">
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.CheckBox")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="over"  />
+        <s:State name="down"  />
+        <s:State name="disabled"  />
+        <s:State name="upAndSelected" />
+        <s:State name="overAndSelected"  />
+        <s:State name="downAndSelected"  />
+        <s:State name="disabledAndSelected"  />
+    </s:states>
+    
+    <s:Group x="0" verticalCenter="0">
+        <!-- background -->
+        <s:Rect d:userLabel="Rectangle" x="0.5" y="0.5" width="12" height="12"
+                alpha.down="0.3"
+                alpha.downAndSelected="0.3"
+                alpha.over="0.3"
+                alpha.overAndSelected="0.3">
+            <s:stroke>
+                <s:SolidColorStroke alpha="0.1" caps="none" color="#C6C6C6" joints="miter"
+                                    miterLimit="4" weight="1"/>
+            </s:stroke>
+            <s:stroke.over>
+                <s:SolidColorStroke caps="none" color="#C6C6C6" joints="miter" miterLimit="4"
+                                    weight="1"/>
+            </s:stroke.over>
+            <s:stroke.down>
+                <s:SolidColorStroke caps="none" color="#C6C6C6" joints="miter" miterLimit="4"
+                                    weight="1"/>
+            </s:stroke.down>
+            <s:stroke.overAndSelected>
+                <s:SolidColorStroke caps="none" color="#C6C6C6" joints="miter" miterLimit="4"
+                                    weight="1"/>
+            </s:stroke.overAndSelected>
+            <s:stroke.downAndSelected>
+                <s:SolidColorStroke caps="none" color="#C6C6C6" joints="miter" miterLimit="4"
+                                    weight="1"/>
+            </s:stroke.downAndSelected>
+            <s:fill>
+                <s:SolidColor color="#FFFFFF" alpha="0"/>
+            </s:fill>
+        </s:Rect>
+        
+        <!-- shadow (down states only) -->
+        
+        <!-- checkmark -->
+        <s:Rect x="1.5" y="1.5" width="10" height="10">
+            <s:stroke>
+                <s:SolidColorStroke caps="none" color="#1B1B1B" joints="miter" miterLimit="4" weight="1"/>
+            </s:stroke>
+        </s:Rect>
+        <s:Rect x="2.5" y="2.5" width="8" height="8">
+            <s:stroke>
+                <s:SolidColorStroke caps="none" color="#212121" joints="miter" miterLimit="4" weight="1"/>
+            </s:stroke>
+        </s:Rect>
+        <s:Rect x="3.5" y="3.5" width="6" height="6">
+            <s:stroke>
+                <s:SolidColorStroke caps="none" color="#2B2B2B" joints="miter" miterLimit="4" weight="1"/>
+            </s:stroke>
+        </s:Rect>
+        <s:Path data="M 3 6 L 4 6 L 4 5 L 5 5 L 5 6 L 6 6 L 6 7 L 7 7 L 7 6 L 8 6 L 8 5 L 9 5 L 9 4 L 10 4 L 10 3 L 11 3 L 11 4 L 12 4 L 12 5 L 11 5 L 11 6 L 10 6 L 10 7 L 9 7 L 9 8 L 8 8 L 8 9 L 7 9 L 7 10 L 6 10 L 6 9 L 5 9 L 5 8 L 4 8 L 4 7 L 3 7 Z"
+                visible.disabled="false"
+                visible.down="false"
+                visible.over="false"
+                visible.up="false">
+            <s:fill>
+                <s:SolidColor color="#cccccc" color.overAndSelected="#ffffff" color.disabledAndSelected="#474747"/>
+            </s:fill>
+        </s:Path>
+    </s:Group>
+    
+    <!-- Label -->
+    <s:RichText id="labelDisplay" x="18" textAlign="start" verticalAlign="middle"
+                alpha.disabled="0.5" verticalCenter.disabled="0.5"
+                bottom.disabledAndSelected="0" width.disabledAndSelected="55"
+                alpha.disabledAndSelected="0.5"
+                verticalCenter.down="0.5"
+                verticalCenter.downAndSelected="0.5"
+                verticalCenter.over="0.5"
+                verticalCenter.overAndSelected="0.5"
+                verticalCenter.up="0.5"
+                verticalCenter.upAndSelected="0.5" fontFamily="Arial"/>
+    
+</s:Skin>

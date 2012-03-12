@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:fc="http://ns.adobe.com/flashcatalyst/2009"
+        width="11" height="100" fc:manageBounds="false"  >
+    
+    <fx:Metadata>
+        [HostComponent("spark.components.Button")]
+    </fx:Metadata> 
+    
+    <s:states>
+        <s:State name="up" />
+        <s:State name="down" />
+        <s:State name="over" />
+        <s:State name="disabled" />
+    </s:states>
+    <s:Rect x="1.5" top="0" bottom="0" width="8">
+        <s:stroke>
+            <s:SolidColorStroke alpha="0.1" caps="square" color="#FFFFFF" joints="miter" weight="1"/>
+        </s:stroke>
+    </s:Rect>
+    
+    <!--<s:Rect x="3" top="2" bottom="2" width="5">
+        <s:fill>
+            <s:SolidColor alpha="0.1" color="#FFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect x="3" top="2" bottom="2" width="1">
+        <s:fill>
+            <s:SolidColor alpha="0.08" color="#FFFFFF"/>
+        </s:fill>
+    </s:Rect>
+    <s:Rect x="4" top="2" bottom="2" width="1">
+        <s:fill>
+            <s:SolidColor alpha="0.05" color="#FFFFFF"/>
+        </s:fill>
+    </s:Rect>-->
+    
+    <s:Rect left="2" top="2" right="2" bottom="2" >
+        <s:fill>
+            <s:LinearGradient>
+                <s:GradientEntry color="0x9A9A9A" 
+                                 alpha="1" />
+                <s:GradientEntry color="0xBDBDBD" 
+                                 alpha="1" />
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    <s:Rect left="2" right="2" top="2" bottom="2" >
+        <s:fill>
+            <s:LinearGradient>
+                <s:GradientEntry color="0x000000" ratio="0"
+                                 alpha="1" />
+                <s:GradientEntry color="0x000000" ratio=".8"
+                                 alpha=".8" />
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+    
+    
+    <s:Rect x="2" top="1" bottom="1">
+        <s:stroke>
+            <s:SolidColorStroke alpha="0.5" caps="square" color="#000000" joints="miter" weight="1"/>
+        </s:stroke>
+    </s:Rect>
+</s:Skin>
