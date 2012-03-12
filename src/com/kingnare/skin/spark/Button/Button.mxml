@@ -67,13 +67,18 @@
     <!-- shadow (down state only) -->
     <!-- label -->
     
+	<s:BitmapImage id="iconDisplay"
+				   source="{hostComponent.getStyle('icon')}"
+				   left="5"
+				   verticalCenter="0"/>
+	
     <s:Label id="labelDisplay" 
-                text="(Label)"
+                text="{hostComponent.getStyle('text')}"
                 left="6" right="6" top="5" bottom="5" 
                 textAlign="center" verticalAlign="middle"
                 horizontalCenter="0" verticalCenter="1">
     </s:Label>
-    
+	
     <s:layout>
         <s:BasicLayout/>
     </s:layout>
