@@ -9,12 +9,13 @@
     
     <fx:Script>
         <![CDATA[
-            override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
-            {
-                super.updateDisplayList(unscaledWidth, unscaledHeight);
-                
-                bgFill.color = getStyle("backgroundColor");
-            }
+			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+			{
+				super.updateDisplayList(unscaledWidth, unscaledHeight);
+
+				bgFill.color = getStyle("contentBackgroundColor");
+				bgFill.alpha = getStyle("contentBackgroundAlpha");
+			}
         ]]>
     </fx:Script>
     
@@ -41,7 +42,7 @@
     <!-- fill -->
     <s:Rect id="background" left="0" right="0" top="0" bottom="0" radiusX="0">
         <s:fill>
-            <s:SolidColor id="bgFill" color="0x222222" />
+            <s:SolidColor id="bgFill"/>
         </s:fill>
     </s:Rect>
     
